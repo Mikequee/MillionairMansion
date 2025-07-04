@@ -4,9 +4,9 @@ import './HeroSection.css'; // Component-specific CSS
 const HeroSection = ({ translations }) => {
   // ADDED: Array of image paths for the carousel
   const heroImages = [
-    '/public/hero-bg.jpg',
-    '/public/Room04.jpg',
-    '/public/Room02.jpg', // Make sure these paths are correct relative to your public folder
+    '/hero-bg.jpg',
+    '/Room04.jpg',
+    '/Room02.jpg', // Make sure these paths are correct relative to your public folder
     
     // Add more image paths as needed (e.g., '/images/hero-bg-4.jpg')
   ];
