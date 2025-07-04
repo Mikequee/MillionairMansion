@@ -1,0 +1,253 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(203, 210, 208, 0.19); /* Semi-transparent */
+  backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* ADDED: Styles for the hamburger menu button (hidden by default on desktop) */
+.hamburger-menu {
+  display: none; /* HIDE: By default, hide on desktop screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001; /* Ensure it's above other content if needed */
+}
+
+/* ADDED: Styles for each bar of the hamburger icon */
+.hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease; /* For the 'X' animation */
+}
+
+
+.navbar-left ul {
+  display: flex;
+  list-style: none;
+  margin: 0; /* ADDED: Reset margin to ensure consistent spacing */
+  padding: 0; /* ADDED: Reset padding to ensure consistent spacing */
+}
+
+.navbar-left li {
+  margin-right: 25px;
+}
+
+.navbar-left a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.4s ease;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.navbar-left a:hover {
+  color: #fff; /* Example hover color */
+  background-color: rgb(3, 59, 59);
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  padding-right: 3vw;
+}
+
+.logo-initial {
+  background-color:rgb(3, 59, 59); /* Example color for the M background */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  margin-left: 15px;
+  color: #777;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: rgb(3, 59, 59);
+}
+
+.book-room-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.book-room-btn:hover {
+  background-color: #0056b3;
+}
+.book-room-btn a{
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+.language-switcher {
+  margin-left: 20px;
+}
+
+.language-switcher select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+
+/* --- Responsive Navbar --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  .navbar-left li {
+    margin-right: 15px;
+  }
+}
+
+/* MODIFIED: Styles applied for screens up to 768px wide (tablets/mobiles) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* MODIFIED: Allows items to wrap to the next line */
+    justify-content: space-between; /* MODIFIED: Spacing between hamburger/logo and right items */
+    padding: 10px 20px;
+  }
+
+  .navbar-left {
+    display: flex; /* MODIFIED: Ensure hamburger and menu are side-by-side */
+    align-items: center;
+    width: auto; /* MODIFIED: Allow content to dictate width */
+  }
+
+  /* ADDED: Show hamburger menu on small screens */
+  .hamburger-menu {
+    display: block; /* SHOW: Display the hamburger button */
+    order: -1; /* MODIFIED: Place hamburger first in order visually */
+  }
+
+  /* MODIFIED: Styles for the navigation links list (ul) on mobile */
+  .nav-links {
+    flex-direction: column; /* MODIFIED: Stack links vertically */
+    position: absolute; /* MODIFIED: Position relative to the nearest positioned ancestor (navbar) */
+    top: 100%; /* MODIFIED: Position directly below the navbar */
+    left: 0;
+    width: 100%; /* MODIFIED: Take full width */
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #eee;
+    /* ADDED: Hide the menu initially by moving it up and making it invisible/transparent */
+    transform: translateY(-100%); /* Start hidden above the viewport */
+    opacity: 0;
+    visibility: hidden;
+    /* ADDED: Smooth transition for opening/closing animation */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+    align-items: flex-start; /* ADDED: Align links to the left */
+    padding: 10px 20px; /* ADDED: Add padding inside the menu */
+  }
+
+  /* ADDED: Styles for when the mobile menu is open */
+  .nav-links.open {
+    transform: translateY(0); /* SLIDE DOWN: Bring the menu into view */
+    opacity: 1; /* FADE IN: Make it visible */
+    visibility: visible; /* Make it interactive */
+  }
+
+  .navbar-left li {
+    margin: 0 0 10px 0; /* MODIFIED: Stack links vertically with spacing */
+    width: 100%; /* ADDED: Make list items full width */
+  }
+
+  .navbar-left a {
+    display: block; /* ADDED: Make links full width for easier tapping */
+    padding: 8px 0; /* ADDED: Add padding to links */
+  }
+
+  .navbar-center {
+    order: 0; /* MODIFIED: Default order */
+    flex-grow: 1; /* MODIFIED: Allow logo to take available space */
+    text-align: center;
+    margin-left: 10px; /* ADDED: Space from hamburger */
+  }
+
+  .navbar-right {
+    width: auto; /* MODIFIED: Allow content to dictate width */
+    margin-left: auto; /* MODIFIED: Push to the right */
+    display: flex; /* ADDED: Ensure elements inside are aligned */
+    align-items: center;
+    /* MODIFIED: Adjust spacing for small screens */
+    .social-icons {
+      display: none;
+    }
+    .book-room-btn {
+      margin-left: 15px;
+    }
+    .language-switcher {
+      margin-left: 15px;
+    }
+  }
+
+  /* ADDED: Optional: Transform hamburger to an 'X' when open */
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-center {
+    font-size: 1.2em; /* Smaller logo */
+  }
+  .navbar-right {
+    flex-wrap: wrap; /* MODIFIED: Allow right items to wrap */
+    width: 100%; /* MODIFIED: Take full width below logo/hamburger */
+    margin-top: 10px; /* ADDED: Space from above elements */
+    justify-content: center; /* MODIFIED: Center buttons */
+  }
+  .social-icons, .book-room-btn, .language-switcher {
+    margin: 5px 10px; /* MODIFIED: Add some margin around elements */
+  }
+  .book-room-btn {
+    text-align: center;
+    flex-grow: 1; /* ADDED: Allow button to grow */
+  }
+  .language-switcher select {
+    width: 100%; /* ADDED: Full width select */
+  }
+}

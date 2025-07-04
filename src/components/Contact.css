@@ -1,0 +1,346 @@
+/* Base styles for the entire section */
+.why-choose-us-section {
+  display: flex;
+  align-items: center; /* Vertically align items in the center */
+  justify-content: center; /* Center content horizontally if space allows */
+  padding: 80px 40px; /* Padding around the entire section */
+  gap: 80px; /* Space between the image and content */
+  background: linear-gradient(180deg,rgba(4, 36, 30, 1) 19%, rgba(18, 77, 57, 1) 50%, rgba(120, 143, 143, 1) 100%);
+  font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Styles for the image container (This will now also be the carousel area) */
+.why-choose-us-image-container {
+   /* Allow image container to take available space */
+   justify-content: center;
+   align-items: center;
+  display: flex; /* Changed to flex to help center the inner carousel wrapper */
+  max-width: 650px; /* Max width for the carousel area */
+  border-radius: 10px; /* Rounded corners for the image container */
+  overflow: hidden; /* IMPORTANT: Hides images outside the view */
+  position: relative; /* IMPORTANT: For positioning arrows absolutely */
+  height: 500px; /* FIXED HEIGHT for the carousel to prevent content shifting */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image container */
+  
+}
+/* ------------------- Carousel Specific Styles ------------------- */
+
+/* Wrapper for the slides (helps with overflow) */
+.carousel-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+}
+
+/* Container holding all slides, which will be transformed */
+.carousel-slides {
+  display: flex; /* Arrange images side-by-side */
+  height: 100%;
+  /* Width will be set inline in JSX: width: `${contactImages.length * 100}%` */
+  transition: transform 0.7s ease-in-out; /* Smooth slide animation */
+}
+
+/* Individual slide image within the carousel */
+.why-choose-us-image.carousel-slide {
+  flex-shrink: 0;
+  width: 80%; /* รูปภาพแต่ละรูปจะกว้างเท่ากับ parent ของมัน */
+  height: 100%; /* รูปภาพแต่ละรูปจะสูงเท่ากับ parent ของมัน (carousel-wrapper) */
+  object-fit: cover; /* This is the key property! (ครอบคลุมพื้นที่ อาจมีการ crop บางส่วน) */
+  /* ถ้าอยากให้รูปภาพแสดงครบทั้งรูปโดยไม่ถูกตัด แต่มีขอบดำ/ขาวได้ ให้เปลี่ยนเป็น object-fit: contain; */
+  border-radius: 10px;
+  box-shadow: none;
+  display: block; /* ลบช่องว่างที่ไม่พึงประสงค์ใต้รูปภาพ */
+  
+  
+}
+
+/* ลบโค้ดนี้ออก เพราะไม่ถูกต้องตามโครงสร้าง HTML และทำให้รูปภาพเล็กเกินไป */
+/* .why-choose-us-image>Img {
+  width: 50px;
+} */
+
+/* Styles for navigation arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 50%; /* Make them circular */
+  z-index: 10; /* Ensure arrows are above the image */
+  opacity: 0.8;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+.prev-arrow {
+  left: 15px; /* Position left arrow */
+}
+
+.next-arrow {
+  right: 15px; /* Position right arrow */
+}
+
+/* ------------------- END Carousel Specific Styles ------------------- */
+
+
+.why-choose-us-content {
+  flex: 1; /* Allow content to take available space */
+  max-width: 600px; /* Max width for the text content */
+  text-align: left;
+}
+
+.why-choose-us-tagline {
+  font-size: 0.9em;
+  color: #4CAF50; /* Green color for tagline */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background-color: #e8f5e9; /* Light green background for tagline */
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block; /* To make padding/background apply correctly */
+}
+
+.why-choose-us-title {
+  font-size: 2.8em;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.why-choose-us-description {
+  font-size: 1.1em;
+  color: #f6f6f6;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.why-choose-us-cards {
+  display: flex; /* Arrange cards in a row */
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap to next line on smaller screens */
+}
+
+.why-choose-us-card {
+  flex: 1; /* Each card takes equal space */
+  min-width: 250px; /* Minimum width before wrapping */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for cards */
+  display: flex;
+  flex-direction: column; /* Stack icon and title */
+  align-items: flex-start; /* Align content to the start */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us-card a {
+  text-decoration: none;
+  color: #1a4220;
+}
+
+/* แก้ไขตรงนี้: ถ้าคุณมีแท็ก <img> ภายใน card ที่ไม่ใช่ carousel */
+.why-choose-us-card img { /* เปลี่ยนจาก Img เป็น img (ตัวเล็ก) และไม่ต้องใช้ class ของ card ด้านหน้าถ้า img นั้นไม่มี class อื่นที่ขัดแย้ง */
+  margin-right: 4px;
+  max-width: 100%; /* ป้องกันรูปภาพใน card ขยายเกินขนาด */
+  height: auto; /* รักษาอัตราส่วน */
+}
+
+.why-choose-us-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.30);
+  cursor: pointer;
+}
+
+.card-green-border {
+  background-color: #fff;
+}
+
+.mapLink {
+  text-decoration: none;
+}
+
+.card-dark-green-bg {
+  background-image: url('/public/map01.png'); /* Dark green background */
+  background-position: top;
+  filter:brightness(1.1);
+  color: #383838; /* White text for dark background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  
+}
+
+.card-dark-green-bg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.30);
+  cursor: pointer;
+}
+
+.line {
+  padding-right: 65px;
+}
+
+.card-icon {
+  width: 40px; /* Placeholder for icon */
+  height: 40px;
+  background-color: #4CAF50; /* Icon background */
+  border-radius: 50%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em; /* If using font icons */
+  color: #fff;
+}
+
+.icon-white {
+  background-color: #fff; /* White icon background for dark card */
+  color: #1a4220; /* Dark green icon color for dark card */
+}
+
+.card-title .fas {
+  padding-left: 10px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.white-text {
+  color: #2b2a2a; /* For text on dark background card */
+}
+
+
+/* --- Responsive Styles --- */
+
+/* Tablet (Portrait) and larger Mobile */
+@media (max-width: 1024px) {
+  .why-choose-us-section {
+    padding: 60px 30px;
+    gap: 50px;
+  }
+  .why-choose-us-title {
+    font-size: 2.2em;
+  }
+  .why-choose-us-description {
+    font-size: 1em;
+  }
+  .why-choose-us-image-container {
+    height: 350px; /* Adjusted height for tablet carousel */
+    max-width: 500px; /* Ensure max-width is adjusted */
+  }
+  .why-choose-us-card {
+    min-width: 220px;
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 1.1em;
+  }
+  .carousel-arrow {
+    padding: 8px 12px;
+    font-size: 1.3em;
+  }
+}
+
+/* Mobile (smaller screens) */
+@media (max-width: 768px) {
+  .why-choose-us-section {
+    flex-direction: column; /* Stack image and content vertically */
+    padding: 40px 20px;
+    gap: 40px;
+    text-align: center; /* Center align text on mobile */
+  }
+
+  .why-choose-us-image-container {
+    order: 1; /* Image appears first */
+    max-width: 100%; /* Take full width on mobile */
+    height: 300px; /* Adjusted height for mobile carousel */
+  }
+
+  .why-choose-us-content {
+    order: 2; /* Content appears second */
+    max-width: 100%; /* Take full width on mobile */
+    text-align: center;
+  }
+
+  .why-choose-us-tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .why-choose-us-title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-us-description {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+
+  .why-choose-us-cards {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .why-choose-us-card {
+    min-width: 80%;
+    max-width: 350px;
+    align-items: center;
+  }
+
+  .card-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .carousel-arrow {
+    padding: 6px 10px;
+    font-size: 1.2em;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .why-choose-us-section {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+  .why-choose-us-title {
+    font-size: 1.5em;
+  }
+  .why-choose-us-description {
+    font-size: 0.85em;
+  }
+  .why-choose-us-image-container {
+    height: 250px; /* Adjusted height for very small screens */
+  }
+  .why-choose-us-card {
+    min-width: 90%;
+  }
+  .card-dark-green-bg a{
+    padding-bottom: 15%;
+  }
+  .carousel-arrow {
+    padding: 5px 8px;
+    font-size: 1em;
+  }
+}

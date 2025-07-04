@@ -1,0 +1,44 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Service",
+    "about": "About",
+    "blog": "Blog",
+    "pages": "Pages",
+    "contact": "Contact",
+    "bookARoom": "Booking"
+  },
+  "heroSection": {
+    "title": "Welcome to Millionair Mansion",
+    "subtitle": "We’re delighted to have you here."
+  },
+  "aboutUsSection": {
+    "title": "Our Service",
+    "subtitle": "Apartment and Snooker Club",
+    "head": "Room Service",
+    "AboutService": "We offer both daily and monthly services starting from just 450 THB/day. Enjoy full convenience with on-site parking, CCTV security, and a mini-mart on the ground floor — all designed for your comfort and peace of mind.",
+    "head01": "Snooker Club",
+    "AboutService01": "At Million Mansion, we offer snooker table service starting at just 150 THB per hour. Enjoy a relaxed atmosphere with full facilities. The snooker area is located on the ground floor, next to our restaurant and lounge area. Open daily from 09:00 to 04:00.Let have a great time playing snooker with us anytime!",
+    "head02": "Event & Function",
+    "AboutService02": "At Millionair Mansion, we offer ground floor space rental for parties, gatherings, or special events. Fully equipped with tables, chairs, electricity, and drinks. Spacious and welcoming, perfect for private or group occasions"
+  },
+  "language": {
+    "en": "English",
+    "th": "Thai",
+    "zh": "Chinese"
+  },
+
+ "ContactSection": {
+  "tagline": "About Us",
+  "title": "Millionaire Mansion Apartment & Snooker Club — Serving You for Over 30 Years",
+  "description": "We are a family business that values warmth and friendly service. With a wide range of amenities, we ensure your stay is both relaxing and comfortable. Our sincere hospitality and welcoming atmosphere mean we’re always here to take care of you.",
+  "imageUrl": "public/Room01.jpg",
+  "award1Title": "Contact Us",
+  "contactInfo01": "The Million Mansion & Snooker Club",
+  "contactInfo02": "Million Mansion",
+  "contactInfo": "029731829",
+  "award2Title": "Location Map"
+}
+
+  
+}

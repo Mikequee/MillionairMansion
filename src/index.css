@@ -1,0 +1,41 @@
+/* Basic Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* App Container (optional, for overall layout) */
+.app-container {
+  overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+}
+
+/* --- Responsive Utilities (General) --- */
+/* You can add more specific utility classes as needed */
+
+/* Typography */
+h1 { font-size: 3em; }
+h2 { font-size: 2.2em; }
+p { font-size: 1.1em; }
+
+/* Mobile First Approach */
+@media (max-width: 768px) {
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.8em; }
+  p { font-size: 1em; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.5em; }
+  p { font-size: 0.9em; }
+}
+
+

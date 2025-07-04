@@ -1,0 +1,41 @@
+{
+  "navbar": {
+    "home": "主页",
+    "services": "服务",
+    "about": "关于我们",
+    "blog": "博客",
+    "pages": "页面",
+    "contact": "联系",
+    "bookARoom": "预订房间"
+  },
+  "heroSection": {
+    "title": "欢迎来到 Millionair Mansion",
+    "subtitle": "我们非常高兴您的到来"
+  },
+  "aboutUsSection": {
+    "title": "我們的服務",
+    "subtitle": "公寓和斯諾克俱樂部",
+    "head": "客房服務",
+    "AboutService": "我们提供按天和按月的服务，起价仅为450泰铢/天。配备齐全的便利设施，包括停车位、监控摄像头以及一楼的便利店，让您的生活更舒适安心",
+    "head01": "斯諾克俱樂部",
+    "AboutService01": "在 Million Mansion，我们提供桌球服务，价格每小时仅需150泰铢。环境轻松愉快，设施齐全。桌球区位于大楼一楼，旁边设有餐厅和休息区。每日营业时间为09:00至04:00。无论是下班后的放松时光，还是周末假期，随时欢迎您来打桌球、享受欢乐时光！",
+    "head02": "活動與活動服務",
+    "AboutService02": "Millionair Mansion 提供一楼场地出租，适合派对、聚会及特殊活动。配备桌椅、电力和饮料。空间宽敞，氛围温馨，适合私人或团体活动。"
+  },
+  "language": {
+    "en": "英语",
+    "th": "泰语",
+    "zh": "中文"
+  },
+  "ContactSection": {
+  "tagline": "关于我们",
+  "title": "Millionaire Mansion 公寓与斯诺克俱乐部 — 陪伴您超过30年",
+  "description": "我们是一家注重温馨与亲切服务的家庭企业，提供多样化设施，让您安心舒适地入住。我们用真诚的服务与亲切的氛围，始终守护您的每一次到来。",
+  "imageUrl": "public/Room01.jpg",
+  "award1Title": "联系我们",
+  "contactInfo01": "Million Mansion 与 斯诺克俱乐部",
+  "contactInfo02": "Million Mansion",
+  "contactInfo": "029731829",
+  "award2Title": "位置地图"
+}
+}

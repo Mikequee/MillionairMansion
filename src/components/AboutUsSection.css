@@ -1,0 +1,115 @@
+.about-us-section {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #d6d6d6;
+}
+
+.about-us-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: rgb(3, 59, 59);
+}
+
+.about-us-subtitle {
+  font-size: 1.5em;
+  color: rgb(3, 59, 59);
+  margin-bottom: 40px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between image cards */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-container-card {
+    padding: 10px;
+  width: 23vw; /* Example fixed width, adjust as needed */
+  height: 35vh; /* Example fixed height, adjust as needed */
+  background-color: #eee; /* Placeholder background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* You'd replace this with actual image backgrounds or <img> tags */
+  background-image: url('https://via.placeholder.com/300x200'); /* Placeholder image */
+  background-size: cover;
+  background-position: center;
+  font-size: clamp(13px, 0.8vw, 18px);
+  text-align: left;
+  text-wrap: wrap;
+  overflow: hidden;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-container-card h1{
+    font-size: 2rem;
+}
+.about-container-card:hover{
+     transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.50);
+  cursor: pointer;
+}
+.fas{
+    padding-right: 0.6vw;
+    color: rgb(3, 59, 59);
+}
+.fa-solid{
+    padding-right: 1vw;
+    color: rgb(3, 59, 59);
+}
+
+/* --- Responsive About Us Section --- */
+@media (max-width: 1024px) {
+  .about-us-section {
+    padding: 60px 20px;
+  }
+  .about-us-title {
+    font-size: 2em;
+  }
+  .about-us-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  .about-container-card {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 40px 15px;
+  }
+  .about-us-title {
+    font-size: 1.8em;
+  }
+  .about-us-subtitle {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  .about-container {
+    flex-direction: column; /* Stack cards vertically on mobile */
+    align-items: center;
+    gap: 15px;
+  }
+  .about-container-card {
+    width: 95%; /* Take up more width on mobile */
+    max-width: 4000px; /* Max width for images */
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 30px 10px;
+  }
+  .about-us-title {
+    font-size: 1.5em;
+  }
+  .about-us-subtitle {
+    font-size: 0.9em;
+  }
+  .about-container-card{
+    height: 70%;
+  }
+}

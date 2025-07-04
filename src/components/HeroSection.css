@@ -1,0 +1,122 @@
+.hero-section {
+  position: relative; /* สำคัญ: เพื่อให้องค์ประกอบ absolute (เช่นลูกศร) จัดตำแหน่งเทียบกับ section นี้ได้ */
+  width: 100%;
+  height: 90vh; /* กำหนดความสูงตาม viewport height */
+  /* MODIFIED (Implicit): background-image จะถูกกำหนดด้วย inline style จาก JS */
+  background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำ */
+  background-position: center center; /* จัดรูปภาพให้อยู่กึ่งกลาง */
+  background-size: cover; /* ครอบคลุมพื้นที่ทั้งหมดของ section */
+  display: flex; /* ใช้ Flexbox เพื่อจัดเนื้อหา (hero-content) ให้อยู่ตรงกลาง */
+  justify-content: center; /* จัดเนื้อหาในแนวนอนกึ่งกลาง */
+  align-items: center; /* จัดเนื้อหาในแนวตั้งกึ่งกลาง */
+  color: #fff; /* สีข้อความบน background */
+  text-align: center;
+  margin-top: 70px; /* เว้นระยะด้านบน เพื่อให้ไม่ชนกับ Navbar ที่เป็น fixed */
+  /* ADDED (Optional, but useful for visual feedback): Transition for background-image 
+     Note: Direct background-image transition can be jumpy. For smooth fades, consider advanced techniques. */
+  transition: background-image 0.5s ease-in-out;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.3); /* Overlay สีดำโปร่งแสงเพื่อให้ข้อความอ่านง่าย */
+  padding: 40px 60px;
+  border-radius: 10px;
+  width: 70%;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความอ่านง่ายขึ้น */
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความอ่านง่ายขึ้น */
+}
+
+.hero-arrows {
+  position: absolute; /* จัดตำแหน่ง absolute เทียบกับ .hero-section */
+  top: 50%; /* อยู่กึ่งกลางแนวตั้ง */
+  transform: translateY(-50%); /* ปรับตำแหน่งให้กึ่งกลางเป๊ะๆ โดยอ้างอิงจากความสูงของตัวเอง */
+  width: 100%; /* ครอบคลุมความกว้างทั้งหมด */
+  display: flex; /* ใช้ Flexbox เพื่อจัดลูกศรซ้าย-ขวา */
+  justify-content: space-between; /* ให้ลูกศรอยู่ซ้ายสุดและขวาสุด */
+  padding: 0 20px;
+}
+
+.arrow {
+  background-color: rgba(255, 255, 255, 0.3); /* พื้นหลังสีขาวโปร่งแสง */
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  cursor: pointer; /* แสดงรูปมือเมื่อเอาเมาส์ไปชี้ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; /* เพิ่ม transition ตอน hover */
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* เปลี่ยนสีตอน hover */
+}
+
+/* --- Responsive Hero Section --- */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3em; /* ลดขนาด font สำหรับ tablet */
+  }
+  .hero-content p {
+    font-size: 1.2em; /* ลดขนาด font สำหรับ tablet */
+  }
+  .hero-arrows {
+    padding: 0 10px; /* ลด padding สำหรับลูกศร */
+  }
+  .arrow {
+    width: 40px; /* ลดขนาดปุ่มลูกศร */
+    height: 40px;
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh; /* ลดความสูงของ Hero Section สำหรับมือถือ/tablet */
+    margin-top: 100px; /* ปรับ margin-top ถ้า Navbar สูงขึ้นบนมือถือ (ตรวจสอบค่าจริง) */
+  }
+  .hero-content {
+    padding: 20px 30px; /* ลด padding ของ content */
+  }
+  .hero-content h1 {
+    font-size: 2.5em; /* ลดขนาด font สำหรับมือถือ */
+  }
+  .hero-content p {
+    font-size: 1em; /* ลดขนาด font สำหรับมือถือ */
+  }
+  .arrow {
+    width: 35px; /* ลดขนาดปุ่มลูกศรอีก */
+    height: 35px;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 50vh; /* ลดความสูงอีกสำหรับมือถือจอเล็ก */
+  }
+  .hero-content {
+    padding: 15px 20px; /* ลด padding ของ content อีก */
+  }
+  .hero-content h1 {
+    font-size: 1.8em; /* ลดขนาด font สำหรับมือถือจอเล็ก */
+  }
+  .hero-content p {
+    font-size: 0.9em; /* ลดขนาด font สำหรับมือถือจอเล็ก */
+  }
+  .hero-arrows {
+    display: none; /* ซ่อนลูกศรบนหน้าจอที่เล็กมากๆ หากไม่ต้องการให้แสดง */
+  }
+}
